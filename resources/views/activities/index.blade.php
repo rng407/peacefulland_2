@@ -17,7 +17,6 @@
     <table class="table is-striped is-fullwidth">
         <thead>
         <tr>
-            <th>ID</th>
             <th>Name</th>
             <th>Description</th>
             <th>Duration (minutes)</th>
@@ -28,7 +27,6 @@
         <tbody>
         @forelse($activities as $activity)
             <tr>
-                <td>{{ $activity->id }}</td>
                 <td>{{ $activity->nama }}</td>
                 <td>{{ $activity->deskripsi ?? '-' }}</td>
                 <td>{{ $activity->durasi ?? '-' }}</td>
