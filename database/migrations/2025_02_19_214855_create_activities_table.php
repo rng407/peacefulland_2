@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('nama');
             $table->text('deskripsi')->nullable();
             $table->integer('durasi')->unsigned()->nullable();
-            $table->string('kategori')->nullable();
             $table->timestamps();
 
         });

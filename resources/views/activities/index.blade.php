@@ -19,8 +19,7 @@
         <tr>
             <th>Name</th>
             <th>Description</th>
-            <th>Duration (minutes)</th>
-            <th>Category</th>
+            <th>Duration (menit)</th>
             <th>Actions</th>
         </tr>
         </thead>
@@ -30,7 +29,6 @@
                 <td>{{ $activity->nama }}</td>
                 <td>{{ $activity->deskripsi ?? '-' }}</td>
                 <td>{{ $activity->durasi ?? '-' }}</td>
-                <td>{{ $activity->kategori ?? '-' }}</td>
                 <td>
                     <div class="buttons">
                         <a href="{{ route('activities.edit', $activity) }}" class="button is-warning is-small">

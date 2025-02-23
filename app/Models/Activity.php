@@ -12,6 +12,5 @@ class Activity extends Model
         'nama',
         'deskripsi',
         'durasi',
-        'kategori',
     ];
 }

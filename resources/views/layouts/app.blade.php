@@ -24,7 +24,7 @@
             height: 100vh; /* 100% dari tinggi viewport */
             overflow-y: auto; /* Jika kontennya lebih panjang dari tinggi layar */
             background-color: #f8f9fa; /* Warna latar belakang sidebar */
-            padding-top: 1rem;
+            padding-top: 1rem; /* Nanti di override oleh JS */
         }
         .footer {
             margin-left: 250px;
@@ -43,6 +43,7 @@
                 position: static; /* Sidebar jadi static saat mobile */
                 height: auto;
                 overflow-y: visible;
+                padding-top: 0; /* Reset padding-top saat mobile */
             }
 
             .footer{
@@ -83,6 +84,27 @@
 </footer>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
+
+        // Fungsi untuk mengatur padding-top sidebar dan tinggi ::before
+        function adjustSidebar() {
+            const topbarHeight = document.querySelector('.navbar').offsetHeight;
+            const sidebar = document.querySelector('.sidebar');
+            const sidebarBefore = window.getComputedStyle(sidebar, '::before'); // Ambil style ::before
+
+            sidebar.style.paddingTop = `${topbarHeight}px`;
+            //document.querySelector('.sidebar::before').style.height = `${topbarHeight}px`; // Atur tinggi ::before
+            // Ubah cara mengatur tinggi ::before:
+            sidebar.style.setProperty('--before-height', `${topbarHeight}px`);
+
+        }
+
+        // Panggil fungsi saat halaman pertama kali dimuat
+        adjustSidebar();
+
+        // Panggil fungsi lagi saat ukuran jendela berubah
+        window.addEventListener('resize', adjustSidebar);
+
+        // ... kode untuk navbar burger (tidak berubah) ...
         const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
 
         $navbarBurgers.forEach( el => {
@@ -91,10 +113,14 @@
                 const $target = document.getElementById(target);
                 el.classList.toggle('is-active');
                 $target.classList.toggle('is-active');
+
+                // Panggil fungsi lagi setelah navbar burger di-klik (untuk kasus mobile)
+                adjustSidebar();
             });
         });
     });
 </script>
 @stack('scripts')
+
 </body>
 </html>

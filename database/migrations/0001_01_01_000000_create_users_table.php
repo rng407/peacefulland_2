@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+
     /**
      * Run the migrations.
      */
@@ -13,7 +14,7 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('username')->unique();
+            $table->string('name')->unique();
             $table->string('password');
             $table->enum('role', ['admin', 'caregiver']);
             $table->string('email')->unique();

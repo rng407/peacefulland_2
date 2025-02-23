@@ -11,7 +11,6 @@ class Medicine extends Model
     protected $fillable = [
         'nama',
         'dosis',
-        'jenis',
         'efek_samping',
         'indikasi',
         'kontraindikasi'

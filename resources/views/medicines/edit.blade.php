@@ -30,15 +30,6 @@
             @enderror
         </div>
 
-        <div class="field">
-            <label class="label" for="jenis">Jenis Obat:</label>
-            <div class="control">
-                <input class="input @error('jenis') is-invalid @enderror" type="text" name="jenis" id="jenis" value="{{ old('jenis', $medicine->jenis) }}">
-            </div>
-            @error('jenis')
-            <p class="help is-danger">{{$message}}</p>
-            @enderror
-        </div>
 
         <div class="field">
             <label class="label" for="efek_samping">efek_samping:</label>

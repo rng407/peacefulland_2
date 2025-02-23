@@ -18,7 +18,6 @@
             <tr>
                 <th>Nama Obat</th>
                 <th>Dosis</th>
-                <th>Jenis</th>
                 <th>efek Samping</th>
                 <th>indikasi</th>
                 <th>Kontra indikasi</th>
@@ -28,7 +27,6 @@
             <tr>
                 <td>{{$medicine->nama}}</td>
                 <td>{{$medicine->dosis ?? '-'}}</td>
-                <td>{{$medicine->jenis  ?? '-'}}</td>
                 <td>{{$medicine->efek_samping  ?? '-'}}</td>
                 <td>{{$medicine->indikasi  ?? '-'}}</td>
                 <td>{{$medicine->kontraindikasi  ?? '-'}}</td>
@@ -39,7 +37,7 @@
                             <i class="fas fa-edit"></i>
                         </span>
                         </a>
-                        <form action="{{route('medicines.destroy', $medicine)}}" method="POST" onsubmit="return confirm('Are you sure?');" style="display: inline-block;">
+                        <form action="{{route('medicines.destroy', $medicine)}}" method="POST" onsubmit="return confirm('Apa kamu yakin?');" style="display: inline-block;">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="button is-danger is-small">

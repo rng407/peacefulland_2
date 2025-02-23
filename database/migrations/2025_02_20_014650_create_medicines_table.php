@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('nama');
             $table->string('dosis', 100)->nullable();
-            $table->string('jenis')->nullable();
             $table->text('efek_samping')->nullable();
             $table->text('indikasi')->nullable();
             $table->text('kontraindikasi')->nullable();

@@ -37,15 +37,7 @@
             @enderror
         </div>
 
-        <div class="field">
-            <label class="label">Category:</label>
-            <div class="control">
-                <input class="input @error('kategori') is-danger @enderror" type="text" name="kategori" value="{{ old('kategori') }}">
-            </div>
-            @error('kategori')
-            <p class="help is-danger">{{ $message }}</p>
-            @enderror
-        </div>
+
 
         <div class="field is-grouped">
             <div class="control">

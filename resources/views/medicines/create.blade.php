@@ -27,15 +27,7 @@
         @enderror
         </div>
 
-        <div class="field">
-            <label class="label" for="jenis">Jenis:</label>
-            <div class="control">
-                <input class="input @error('jenis') is-danger @enderror" type="text" name="jenis" id="jenis" value="{{ old('jenis') }}" required>
-            </div>
-            @error('jenis')
-            <p class="help is-danger">{{ $message }}</p>
-            @enderror
-        </div>
+
 
         <div class="field">
             <label class="label" for="efek_samping">Efek Samping:</label>
