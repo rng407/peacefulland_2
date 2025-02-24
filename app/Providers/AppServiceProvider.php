@@ -9,6 +9,7 @@ use App\Repositories\MedicineRepository;
 use App\Repositories\Interfaces\MedicineRepositoryInterface;
 class AppServiceProvider extends ServiceProvider
 {
+    public const HOME = '/dashboard';
     /**
      * Register any application services.
      */
